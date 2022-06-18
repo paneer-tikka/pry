@@ -25,7 +25,7 @@ class Pry
   # Catches SecurityErrors if $SAFE is set
   module Pry::TooSafeException
     def self.===(exception)
-      $SAFE > 0 && SecurityError === exception
+      $SAFE && $SAFE > 0 && SecurityError === exception
     end
   end
 
